@@ -11,7 +11,6 @@ concurrency: 1
 on:
   push:
     branches:
-      - dev
       - main
     paths:
       - 'spencer_cicd_poc/**'
@@ -31,8 +30,17 @@ jobs:
 
       # Deploy the bundle to the "prod" target as defined
       # in the bundle's settings file.
-      - run: databricks bundle deploy
+      - name: Validate Prod Bundle
+        run: databricks bundle validate -t prod
         working-directory: spencer_cicd_poc
         env:
           DATABRICKS_TOKEN: ${{ secrets.SP_TOKEN }}
           DATABRICKS_BUNDLE_ENV: prod
+          
+      - name: Deploy Prod Bundle
+        run: databricks bundle deploy -t prod
+        working-directory: spencer_cicd_poc
+        env:
+          DATABRICKS_TOKEN: ${{ secrets.SP_TOKEN }}
+          DATABRICKS_BUNDLE_ENV: prod
+          
