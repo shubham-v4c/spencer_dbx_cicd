@@ -38,7 +38,7 @@ jobs:
           DATABRICKS_BUNDLE_ENV: prod
           
       - name: Deploy Prod Bundle
-        run: databricks bundle deploy -t prod
+        run: databricks bundle deploy -t prod --auto-approve
         working-directory: spencer_cicd_poc
         env:
           DATABRICKS_TOKEN: ${{ secrets.SP_TOKEN }}
