@@ -11,6 +11,7 @@ concurrency: 1
 on:
   push:
     branches:
+      - dev
       - main
     paths:
       - 'spencer_cicd_poc/**'
