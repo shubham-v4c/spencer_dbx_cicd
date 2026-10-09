@@ -1,0 +1,14 @@
+resources:
+  pipelines:
+    cicd_demo:
+      name: cicd demo
+      libraries:
+        - glob:
+            include: ../src/cicd_demo/transformations/**
+      catalog: workspace
+      channel: CURRENT
+      continuous: false
+      photon: true
+      root_path: ../src/cicd_demo
+      schema: default
+      serverless: true
