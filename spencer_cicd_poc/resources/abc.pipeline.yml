@@ -1,14 +1,14 @@
 resources:
   pipelines:
-    cicd_demo:
-      name: cicd demo
+    abc:
+      name: abc
       libraries:
         - glob:
-            include: ../src/cicd_demo/transformations/**
+            include: ../src/abc/transformations/**
       catalog: workspace
       channel: CURRENT
       continuous: false
       photon: true
-      root_path: ../src/cicd_demo
+      root_path: ../src/abc
       schema: default
       serverless: true
