@@ -34,6 +34,8 @@ jobs:
         run: databricks bundle validate -t prod
         working-directory: spencer_cicd_poc
         env:
+          DATABRICKS_CLIENT_ID: 3284d68f-e46d-4559-835f-388da390ef55
+
           DATABRICKS_HOST: ${{ secrets.PROD_HOST }}
           DATABRICKS_TOKEN: ${{ secrets.SP_PROD_DEMO_TOKEN }}
           DATABRICKS_BUNDLE_ENV: prod
@@ -42,6 +44,7 @@ jobs:
         run: databricks bundle deploy -t prod --auto-approve
         working-directory: spencer_cicd_poc
         env:
+          DATABRICKS_CLIENT_ID: 3284d68f-e46d-4559-835f-388da390ef55
           DATABRICKS_HOST: ${{ secrets.PROD_HOST }}
           DATABRICKS_TOKEN: ${{ secrets.SP_PROD_DEMO_TOKEN }}
           DATABRICKS_BUNDLE_ENV: prod
