@@ -34,13 +34,13 @@ jobs:
         run: databricks bundle validate -t prod
         working-directory: spencer_cicd_poc
         env:
-          DATABRICKS_TOKEN: ${{ secrets.SP_TOKEN }}
+          DATABRICKS_TOKEN: ${{ secrets.SP_PROD_DEMO_TOKEN }}
           DATABRICKS_BUNDLE_ENV: prod
           
       - name: Deploy Prod Bundle
         run: databricks bundle deploy -t prod --auto-approve
         working-directory: spencer_cicd_poc
         env:
-          DATABRICKS_TOKEN: ${{ secrets.SP_TOKEN }}
+          DATABRICKS_TOKEN: ${{ secrets.SP_PROD_DEMO_TOKEN }}
           DATABRICKS_BUNDLE_ENV: prod
           
