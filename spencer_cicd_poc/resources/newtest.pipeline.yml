@@ -1,0 +1,14 @@
+resources:
+  pipelines:
+    newtest:
+      name: newtest
+      libraries:
+        - glob:
+            include: ../src/newtest/transformations/**
+      catalog: workspace
+      channel: CURRENT
+      continuous: false
+      photon: true
+      root_path: ../src/newtest
+      schema: default
+      serverless: true
