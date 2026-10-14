@@ -1,0 +1,14 @@
+resources:
+  pipelines:
+    success_pipe:
+      name: success pipe
+      libraries:
+        - glob:
+            include: ../src/success_pipe/transformations/**
+      catalog: workspace
+      channel: CURRENT
+      continuous: false
+      photon: true
+      root_path: ../src/success_pipe
+      schema: default
+      serverless: true
