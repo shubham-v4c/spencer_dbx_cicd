@@ -1,0 +1,16 @@
+resources:
+  pipelines:
+    pipeline_success_pipe:
+      name: success pipe
+      libraries:
+        - glob:
+            include: /Workspace/Users/shubham.p.jaiswal@v4c.ai/success
+              pipe/transformations/**
+      schema: default
+      continuous: false
+      development: false
+      photon: true
+      channel: CURRENT
+      catalog: workspace
+      serverless: true
+      root_path: /Workspace/Users/shubham.p.jaiswal@v4c.ai/success pipe
