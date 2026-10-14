@@ -26,7 +26,6 @@ jobs:
           DATABRICKS_HOST: ${{ secrets.PROD_HOST }}
           DATABRICKS_CLIENT_ID: 3284d68f-e46d-4559-835f-388da390ef55
           DATABRICKS_CLIENT_SECRET: ${{ secrets.SP_PROD_DEMO_TOKEN }}
-          DATABRICKS_TOKEN: "" # Explicitly clears any inherited token
           DATABRICKS_BUNDLE_ENV: prod
 
       - name: Deploy Prod Bundle
@@ -36,5 +35,4 @@ jobs:
           DATABRICKS_HOST: ${{ secrets.PROD_HOST }}
           DATABRICKS_CLIENT_ID: 3284d68f-e46d-4559-835f-388da390ef55
           DATABRICKS_CLIENT_SECRET: ${{ secrets.SP_PROD_DEMO_TOKEN }}
-          DATABRICKS_TOKEN: "" # Explicitly clears any inherited token
           DATABRICKS_BUNDLE_ENV: prod
