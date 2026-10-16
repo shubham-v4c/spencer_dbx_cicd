@@ -1,0 +1,36 @@
+# This is a Declarative Automation Bundle definition for spencer_cicd_poc.
+bundle:
+  name: spencer_cicd_poc
+  uuid: ab76ef15-74c0-457f-8354-01491bf7ddfe
+
+include:
+  - resources/*.yml
+
+variables:
+  catalog:
+    description: The catalog to use
+  schema:
+    description: The schema to use
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://dbc-d970e952-ce51.cloud.databricks.com
+    run_as:
+      service_principal_name: '30b3118f-ef8d-436c-94ba-1b03ab3c08dc' # <--- DEV SP
+    variables:
+      catalog: spencer_poc
+      schema: dev
+
+  prod:
+    mode: production
+    workspace:
+      host: https://dbc-314e6509-d035.cloud.databricks.com
+    run_as:
+      service_principal_name: '3284d68f-e46d-4559-835f-388da390ef55' 
+      # <--- PROD SP
+    variables:
+      catalog: spencer_poc
+      schema: prod
