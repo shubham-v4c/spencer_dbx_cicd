@@ -1,0 +1,21 @@
+resources:
+  jobs:
+    new_job_2026_10_28_12_45_18:
+      name: New Job 2026-10-28 12:45:18
+      tasks:
+        - task_key: tagstest
+          disabled: false
+          email_notifications: {}
+          notebook_task:
+            notebook_path: ../src/new_job_2026_10_28_12_45_18/New Notebook 2026-10-14 13:16:21.ipynb
+            source: WORKSPACE
+          run_if: ALL_SUCCESS
+          timeout_seconds: 0
+      email_notifications:
+        no_alert_for_skipped_runs: false
+      max_concurrent_runs: 1
+      performance_target: PERFORMANCE_OPTIMIZED
+      queue:
+        enabled: true
+      timeout_seconds: 0
+      webhook_notifications: {}
