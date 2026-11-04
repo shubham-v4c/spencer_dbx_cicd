@@ -19,7 +19,7 @@ targets:
     workspace:
       host: https://dbc-d970e952-ce51.cloud.databricks.com
     run_as:
-      service_principal_name: '30b3118f-ef8d-436c-94ba-1b03ab3c08dc' # <--- DEV SP
+      service_principal_name: '65105f5e-0f64-4833-8cb2-ad4167a784fb' # <--- DEV SP
     variables:
       catalog: spencer_poc
       schema: dev
