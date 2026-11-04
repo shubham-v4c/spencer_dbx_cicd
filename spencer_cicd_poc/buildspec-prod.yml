@@ -16,9 +16,9 @@ phases:
   pre_build:
     commands:
       - echo "Validating Databricks Asset Bundle for target $TARGET_ENV..."
-      - cd spencer_cicd_poc
+      - cd "$CODEBUILD_SRC_DIR/spencer_cicd_poc"
       - databricks bundle validate --target $TARGET_ENV
   build:
     commands:
-      - cd spencer_cicd_poc
+      - cd "$CODEBUILD_SRC_DIR/spencer_cicd_poc"
       - databricks bundle deploy --target $TARGET_ENV
