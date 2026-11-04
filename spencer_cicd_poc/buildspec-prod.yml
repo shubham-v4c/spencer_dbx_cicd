@@ -1,0 +1,24 @@
+version: 0.2
+
+env:
+  variables:
+    TARGET_ENV: "prod"
+  secrets-manager:
+    DATABRICKS_HOST: "databricks/cicd/credentials:PROD_DATABRICKS_HOST1"
+    DATABRICKS_CLIENT_ID: "databricks/cicd/credentials:PROD_DATABRICKS_CLIENT_ID1"
+    DATABRICKS_CLIENT_SECRET: "databricks/cicd/credentials:PROD_DATABRICKS_CLIENT_SECRET1"
+
+phases:
+  install:
+    commands:
+      - echo "Installing Databricks CLI..."
+      - curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
+  pre_build:
+    commands:
+      - echo "Validating Databricks Asset Bundle for target $TARGET_ENV..."
+      - cd "$CODEBUILD_SRC_DIR/spencer_cicd_poc"
+      - databricks bundle validate --target $TARGET_ENV
+  build:
+    commands:
+      - cd "$CODEBUILD_SRC_DIR/spencer_cicd_poc"
+      - databricks bundle deploy --target $TARGET_ENV
