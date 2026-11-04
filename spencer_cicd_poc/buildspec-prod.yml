@@ -21,4 +21,4 @@ phases:
   build:
     commands:
       - cd "$CODEBUILD_SRC_DIR/spencer_cicd_poc"
-      - databricks bundle deploy --target $TARGET_ENV
+      - databricks bundle deploy --target $TARGET_ENV --auto-approve
