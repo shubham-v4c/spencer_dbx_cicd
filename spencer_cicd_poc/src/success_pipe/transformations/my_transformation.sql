@@ -1,1 +1,0 @@
-select * from workspace.default.alteryx_source_data limit 10
