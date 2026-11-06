@@ -1,0 +1,6 @@
+# Leave all resources, source code, and jobs open to standard PR reviews
+*
+
+# Require explicit approval only when modifying the root bundle configuration
+/databricks.yml  @your-admin-user @your-org/databricks-admins
+/databricks.yaml @your-admin-user @your-org/databricks-admins
